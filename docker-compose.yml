@@ -71,6 +71,23 @@ services:
       - my-network
     command: start-dev
 
+  task-front:
+    image: task-front:latest
+    container_name: task-front
+    environment:
+      - VITE_KEYCLOAK_HOST=http://keycloak:8080
+      - VITE_BACKEND_HOST=http://task-service:5167
+      - VITE_CLIENT_ID=taskManager-backEnd
+      - VITE_CLIENT_SECRET=**********
+      - VITE_SCOPE=openid
+      - VITE_GRANT_TYPE=password
+      - VITE_ADMIN_USER=admin
+      - VITE_ADMIN_PASS=admin
+    ports:
+      - "80:80"
+    networks:
+      - my-network
+
 
 networks:
   my-network:

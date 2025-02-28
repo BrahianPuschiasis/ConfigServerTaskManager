@@ -48,6 +48,12 @@ docker-compose -f mySQL.yml up -d
 docker-compose -f rabbit.yml up -d
 ```
 
+```sh
+# Levantar KeyCloak
+docker-compose -f keycloak.yml up -d
+```
+
+
 ### Levantar todo con `docker-compose`
 
 Se encuentra un `docker-compose.yml` en este mismo repositorio, que levanta todos los servicios simultáneamente con sus configuraciones respectivas.
